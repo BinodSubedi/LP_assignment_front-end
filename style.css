@@ -36,6 +36,7 @@ body,main{
 main{
 
     display: grid;
+    overflow-x: hidden;
     /* grid-template-columns: [container-start] 1fr [center-start] repeat(6, [col-start] minmax(min-content, 16.67rem) [col-end]) [center-end] 1fr [container-end]; */
     grid-template-columns: minmax(min-content, 30%) minmax(min-content, 70%);
     min-height: 100vh;
@@ -80,6 +81,13 @@ main{
     align-items: center;
     position: relative;
 }
+
+/* .left_down_information{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+} */
 
 .left_main_upper::after, .left_info::after, .left_socials::after{
     content: "";
@@ -137,6 +145,7 @@ main{
 .left_info, .left_socials, .left_languages{
     margin-left: 1rem;
     padding-top: 3rem;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -145,10 +154,19 @@ main{
 
 }
 
+.left_down_information{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: calc(13% + 0.7rem);
+}
+
 .info{
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     padding-right: 3rem;
 }
 
@@ -222,14 +240,17 @@ main{
 .right_content{
     padding: 1.2rem 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    /* margin: 1rem; */
     width: 100%;
 
 }
 
 .projects_main_first{
     background-color: var(--color-tertiary);
+    margin: 1rem;
     padding: 3rem;
 }
 
@@ -382,6 +403,7 @@ main{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin: 1rem;
     padding: 3rem;
     background-color: var(--color-tertiary);
     border-radius: 0.4rem;
@@ -450,6 +472,7 @@ main{
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
+    /* margin: 1rem; */
     align-items: center;
 }
 
@@ -461,6 +484,7 @@ main{
     display: flex;
     align-items: center;
     padding: 0 4rem;
+    margin: 1rem;
     border-radius: 0.4rem;
     height: 10rem;
     font-size: 1.5rem;
@@ -695,5 +719,26 @@ main{
     top: 1rem;
     left: -4rem;
     background-color: #ffff;
+}
 
+@media screen and (max-width: 900px){
+
+
+    main{
+        grid-template-columns: 100vw;
+    }
+
+
+    .left_down_information{
+        padding-left: calc(35% + 1rem)
+        /* align-items: center; */
+    }
+
+}
+
+@media screen and (max-width: 660px){
+
+    .left_down_information{
+        padding-left: calc(20% + 2rem);
+    }
 }
